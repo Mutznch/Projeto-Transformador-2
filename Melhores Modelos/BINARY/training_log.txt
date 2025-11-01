@@ -1,0 +1,127 @@
+--- LOG INICIADO: ./training_output\training_log.txt ---
+Carregando DataFrames de Treino (Raw Augmented), Validação e Teste...
+Total Original (Raw): 16020, Total Aumentado (Raw): 236020
+  -> Offline-Module: Added 338 Augmented (Total: 1000)
+  -> No-Anomaly: Added 1990 Augmented (Total: 10000)
+  -> Shadowing: Added 155 Augmented (Total: 1000)
+  -> Diode: Undersampled (Originals) to 1000
+  -> Cracking: Added 247 Augmented (Total: 1000)
+  -> Cell: Undersampled (Originals) to 1000
+  -> Cell-Multi: Undersampled (Originals) to 1000
+  -> Vegetation: Undersampled (Originals) to 1000
+  -> Soiling: Added 836 Augmented (Total: 1000)
+  -> Diode-Multi: Added 859 Augmented (Total: 1000)
+  -> Hot-Spot: Added 801 Augmented (Total: 1000)
+  -> Hot-Spot-Multi: Added 802 Augmented (Total: 1000)
+
+--- Mapeamento Binário aplicado no conjunto de treino balanceado. ---
+--- Sub-amostragem binária aplicada para 11000 amostras por classe. ---
+
+--- Aplicando Configurações Binárias Finais ---
+
+Total de Amostras de Treino FINAL (Após Equalização): 21000
+Distribuição Final de Classes de Treino:
+anomaly_class
+Anomaly       11000
+No-Anomaly    10000
+Name: count, dtype: int64
+Total classes: 2. Train samples (Final): 21000, Val samples: 1980, Test samples: 2000
+Pesos de Classe Aplicados (na ordem do LabelEncoder): [1.0, 1.0]
+
+Iniciando extração e escrita batch-wise para train (Total: 21000)...
+  -> Modelo ResNet | Feature Size: 2048
+  -> Modelo ViT | Feature Size: 768
+  -> Modelo MobileNetV2 | Feature Size: 1280
+  -> Modelo AlexNet | Feature Size: 9216
+
+Concatenando features (Input Size: 13312)...
+Ensemble features salvas com sucesso em: ./training_output\feature_cache\features_train_BINARY_ENSEMBLE.npy
+
+Iniciando extração e escrita batch-wise para val (Total: 1980)...
+  -> Modelo ResNet | Feature Size: 2048
+  -> Modelo ViT | Feature Size: 768
+  -> Modelo MobileNetV2 | Feature Size: 1280
+  -> Modelo AlexNet | Feature Size: 9216
+
+Concatenando features (Input Size: 13312)...
+Ensemble features salvas com sucesso em: ./training_output\feature_cache\features_val_BINARY_ENSEMBLE.npy
+
+Iniciando extração e escrita batch-wise para test (Total: 2000)...
+  -> Modelo ResNet | Feature Size: 2048
+  -> Modelo ViT | Feature Size: 768
+  -> Modelo MobileNetV2 | Feature Size: 1280
+  -> Modelo AlexNet | Feature Size: 9216
+
+Concatenando features (Input Size: 13312)...
+Ensemble features salvas com sucesso em: ./training_output\feature_cache\features_test_BINARY_ENSEMBLE.npy
+INPUT_SIZE (Features Ensemble): 13312
+
+==================================================
+INICIANDO TREINAMENTO DO CLASSIFICADOR (BINARY classes)
+==================================================
+Epoch 1/400 | Train Loss: 0.3487 | Val Loss: 0.3035 | LR: 0.000100
+Epoch 2/400 | Train Loss: 0.2381 | Val Loss: 0.2623 | LR: 0.000100
+Epoch 3/400 | Train Loss: 0.2119 | Val Loss: 0.2547 | LR: 0.000100
+Epoch 4/400 | Train Loss: 0.1958 | Val Loss: 0.2301 | LR: 0.000100
+Epoch 5/400 | Train Loss: 0.1859 | Val Loss: 0.2401 | LR: 0.000100
+Epoch 6/400 | Train Loss: 0.1772 | Val Loss: 0.2555 | LR: 0.000100
+Epoch 7/400 | Train Loss: 0.1711 | Val Loss: 0.2143 | LR: 0.000100
+Epoch 8/400 | Train Loss: 0.1613 | Val Loss: 0.2093 | LR: 0.000100
+Epoch 9/400 | Train Loss: 0.1538 | Val Loss: 0.4113 | LR: 0.000100
+Epoch 10/400 | Train Loss: 0.1505 | Val Loss: 0.2140 | LR: 0.000100
+Epoch 11/400 | Train Loss: 0.1444 | Val Loss: 0.2387 | LR: 0.000100
+Epoch 12/400 | Train Loss: 0.1391 | Val Loss: 0.2342 | LR: 0.000100
+Epoch 13/400 | Train Loss: 0.1420 | Val Loss: 0.2825 | LR: 0.000100
+Epoch 14/400 | Train Loss: 0.1344 | Val Loss: 0.2375 | LR: 0.000100
+Epoch 15/400 | Train Loss: 0.1314 | Val Loss: 0.2383 | LR: 0.000100
+Epoch 16/400 | Train Loss: 0.1231 | Val Loss: 0.2097 | LR: 0.000050
+Epoch 17/400 | Train Loss: 0.1068 | Val Loss: 0.2093 | LR: 0.000050
+Epoch 18/400 | Train Loss: 0.0988 | Val Loss: 0.2026 | LR: 0.000050
+Epoch 19/400 | Train Loss: 0.0969 | Val Loss: 0.2008 | LR: 0.000050
+Epoch 20/400 | Train Loss: 0.0941 | Val Loss: 0.2117 | LR: 0.000050
+Epoch 21/400 | Train Loss: 0.0928 | Val Loss: 0.2124 | LR: 0.000050
+Epoch 22/400 | Train Loss: 0.0891 | Val Loss: 0.2048 | LR: 0.000050
+Epoch 23/400 | Train Loss: 0.0861 | Val Loss: 0.3974 | LR: 0.000050
+Epoch 24/400 | Train Loss: 0.0868 | Val Loss: 0.2628 | LR: 0.000050
+Epoch 25/400 | Train Loss: 0.0829 | Val Loss: 0.2309 | LR: 0.000050
+Epoch 26/400 | Train Loss: 0.0781 | Val Loss: 0.2216 | LR: 0.000050
+Epoch 27/400 | Train Loss: 0.0763 | Val Loss: 0.2116 | LR: 0.000025
+Epoch 28/400 | Train Loss: 0.0733 | Val Loss: 0.2339 | LR: 0.000025
+Epoch 29/400 | Train Loss: 0.0674 | Val Loss: 0.2108 | LR: 0.000025
+Epoch 30/400 | Train Loss: 0.0622 | Val Loss: 0.2345 | LR: 0.000025
+Epoch 31/400 | Train Loss: 0.0589 | Val Loss: 0.2509 | LR: 0.000025
+Epoch 32/400 | Train Loss: 0.0564 | Val Loss: 0.2466 | LR: 0.000025
+Epoch 33/400 | Train Loss: 0.0555 | Val Loss: 0.2400 | LR: 0.000025
+Epoch 34/400 | Train Loss: 0.0543 | Val Loss: 0.2411 | LR: 0.000025
+Epoch 35/400 | Train Loss: 0.0527 | Val Loss: 0.2659 | LR: 0.000013
+Epoch 36/400 | Train Loss: 0.0461 | Val Loss: 0.2448 | LR: 0.000013
+Epoch 37/400 | Train Loss: 0.0499 | Val Loss: 0.2303 | LR: 0.000013
+Epoch 38/400 | Train Loss: 0.0437 | Val Loss: 0.2628 | LR: 0.000013
+
+[Early Stopping] Parando na Época 39 após 20 épocas sem melhora.
+
+Training finished.
+
+==================================================
+CLASSIFICATION RESULTS (BINARY classes)
+==================================================
+Overall Accuracy: 0.9385
+
+Detailed Classification Report:
+              precision    recall  f1-score   support
+
+     Anomaly       0.93      0.94      0.94      1000
+  No-Anomaly       0.94      0.93      0.94      1000
+
+    accuracy                           0.94      2000
+   macro avg       0.94      0.94      0.94      2000
+weighted avg       0.94      0.94      0.94      2000
+
+Matriz de Confusão Sem Normalização
+
+Matriz salva em: ./augmented_data_output\confusion_matrix_raw_BINARY.png
+Matriz de Confusão Normalizada
+
+Matriz salva em: ./augmented_data_output\confusion_matrix_normalized_BINARY.png
+
+Final DNN model salvo como: ultradeep_dnn_BINARY_aug.pth

@@ -1,0 +1,154 @@
+--- LOG INICIADO: ./training_output\training_log.txt ---
+Carregando DataFrames de Treino (Raw Augmented), Validação e Teste...
+Total Original (Raw): 16020, Total Aumentado (Raw): 236020
+  -> Offline-Module: Added 11338 Augmented (Total: 12000)
+  -> No-Anomaly: Added 1990 Augmented (Total: 10000)
+  -> Shadowing: Added 11155 Augmented (Total: 12000)
+  -> Diode: Added 8799 Augmented (Total: 10000)
+  -> Cracking: Added 11247 Augmented (Total: 12000)
+  -> Cell: Added 13497 Augmented (Total: 15000)
+  -> Cell-Multi: Added 18969 Augmented (Total: 20000)
+  -> Vegetation: Added 10687 Augmented (Total: 12000)
+  -> Soiling: Added 19836 Augmented (Total: 20000)
+  -> Diode-Multi: Added 11859 Augmented (Total: 12000)
+  -> Hot-Spot: Added 14801 Augmented (Total: 15000)
+  -> Hot-Spot-Multi: Added 15802 Augmented (Total: 16000)
+
+Total de Amostras de Treino FINAL (Após Equalização): 166000
+Distribuição Final de Classes de Treino:
+anomaly_class
+Soiling           20000
+Cell-Multi        20000
+Hot-Spot-Multi    16000
+Cell              15000
+Hot-Spot          15000
+Cracking          12000
+Shadowing         12000
+Offline-Module    12000
+Vegetation        12000
+Diode-Multi       12000
+Diode             10000
+No-Anomaly        10000
+Name: count, dtype: int64
+Total classes: 12. Train samples (Final): 166000, Val samples: 1980, Test samples: 2000
+Pesos de Classe Aplicados (na ordem do LabelEncoder): [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
+
+Iniciando extração e escrita batch-wise para train (Total: 166000)...
+  -> Modelo ResNet | Feature Size: 2048
+  -> Modelo ViT | Feature Size: 768
+  -> Modelo MobileNetV2 | Feature Size: 1280
+  -> Modelo AlexNet | Feature Size: 9216
+
+Concatenando features (Input Size: 13312)...
+Ensemble features salvas com sucesso em: ./training_output\feature_cache\features_train_ALL_ENSEMBLE.npy
+
+Iniciando extração e escrita batch-wise para val (Total: 1980)...
+  -> Modelo ResNet | Feature Size: 2048
+  -> Modelo ViT | Feature Size: 768
+  -> Modelo MobileNetV2 | Feature Size: 1280
+  -> Modelo AlexNet | Feature Size: 9216
+
+Concatenando features (Input Size: 13312)...
+Ensemble features salvas com sucesso em: ./training_output\feature_cache\features_val_ALL_ENSEMBLE.npy
+
+Iniciando extração e escrita batch-wise para test (Total: 2000)...
+  -> Modelo ResNet | Feature Size: 2048
+  -> Modelo ViT | Feature Size: 768
+  -> Modelo MobileNetV2 | Feature Size: 1280
+  -> Modelo AlexNet | Feature Size: 9216
+
+Concatenando features (Input Size: 13312)...
+Ensemble features salvas com sucesso em: ./training_output\feature_cache\features_test_ALL_ENSEMBLE.npy
+INPUT_SIZE (Features Ensemble): 13312
+
+==================================================
+INICIANDO TREINAMENTO DO CLASSIFICADOR (ALL classes)
+==================================================
+Epoch 1/400 | Train Loss: 2.2585 | Val Loss: 1.0674 | LR: 0.000100
+Epoch 2/400 | Train Loss: 2.1705 | Val Loss: 0.9359 | LR: 0.000100
+Epoch 3/400 | Train Loss: 2.1407 | Val Loss: 0.9851 | LR: 0.000100
+Epoch 4/400 | Train Loss: 2.1195 | Val Loss: 0.8568 | LR: 0.000100
+Epoch 5/400 | Train Loss: 2.1034 | Val Loss: 0.8083 | LR: 0.000100
+Epoch 6/400 | Train Loss: 2.0896 | Val Loss: 0.7767 | LR: 0.000100
+Epoch 7/400 | Train Loss: 2.0790 | Val Loss: 0.8155 | LR: 0.000100
+Epoch 8/400 | Train Loss: 2.0684 | Val Loss: 0.7734 | LR: 0.000100
+Epoch 9/400 | Train Loss: 2.0606 | Val Loss: 0.7636 | LR: 0.000100
+Epoch 10/400 | Train Loss: 2.0527 | Val Loss: 0.7411 | LR: 0.000100
+Epoch 11/400 | Train Loss: 2.0451 | Val Loss: 0.6881 | LR: 0.000100
+Epoch 12/400 | Train Loss: 2.0388 | Val Loss: 0.6952 | LR: 0.000100
+Epoch 13/400 | Train Loss: 2.0320 | Val Loss: 0.7597 | LR: 0.000100
+Epoch 14/400 | Train Loss: 2.0271 | Val Loss: 0.6841 | LR: 0.000100
+Epoch 15/400 | Train Loss: 2.0224 | Val Loss: 0.6817 | LR: 0.000100
+Epoch 16/400 | Train Loss: 2.0179 | Val Loss: 0.6770 | LR: 0.000100
+Epoch 17/400 | Train Loss: 2.0131 | Val Loss: 0.6825 | LR: 0.000100
+Epoch 18/400 | Train Loss: 2.0077 | Val Loss: 0.6712 | LR: 0.000100
+Epoch 19/400 | Train Loss: 2.0046 | Val Loss: 0.7219 | LR: 0.000100
+Epoch 20/400 | Train Loss: 2.0003 | Val Loss: 0.6661 | LR: 0.000100
+Epoch 21/400 | Train Loss: 1.9982 | Val Loss: 0.6436 | LR: 0.000100
+Epoch 22/400 | Train Loss: 1.9932 | Val Loss: 0.6607 | LR: 0.000100
+Epoch 23/400 | Train Loss: 1.9912 | Val Loss: 0.6505 | LR: 0.000100
+Epoch 24/400 | Train Loss: 1.9892 | Val Loss: 0.6841 | LR: 0.000100
+Epoch 25/400 | Train Loss: 1.9856 | Val Loss: 0.6798 | LR: 0.000100
+Epoch 26/400 | Train Loss: 1.9822 | Val Loss: 0.6469 | LR: 0.000100
+Epoch 27/400 | Train Loss: 1.9804 | Val Loss: 0.6829 | LR: 0.000100
+Epoch 28/400 | Train Loss: 1.9782 | Val Loss: 0.6846 | LR: 0.000100
+Epoch 29/400 | Train Loss: 1.9734 | Val Loss: 0.6915 | LR: 0.000050
+Epoch 30/400 | Train Loss: 1.9611 | Val Loss: 0.6593 | LR: 0.000050
+Epoch 31/400 | Train Loss: 1.9546 | Val Loss: 0.6291 | LR: 0.000050
+Epoch 32/400 | Train Loss: 1.9521 | Val Loss: 0.6685 | LR: 0.000050
+Epoch 33/400 | Train Loss: 1.9479 | Val Loss: 0.6921 | LR: 0.000050
+Epoch 34/400 | Train Loss: 1.9470 | Val Loss: 0.6579 | LR: 0.000050
+Epoch 35/400 | Train Loss: 1.9445 | Val Loss: 0.7405 | LR: 0.000050
+Epoch 36/400 | Train Loss: 1.9437 | Val Loss: 0.7301 | LR: 0.000050
+Epoch 37/400 | Train Loss: 1.9406 | Val Loss: 0.6891 | LR: 0.000050
+Epoch 38/400 | Train Loss: 1.9377 | Val Loss: 0.7064 | LR: 0.000050
+Epoch 39/400 | Train Loss: 1.9383 | Val Loss: 0.6984 | LR: 0.000025
+Epoch 40/400 | Train Loss: 1.9305 | Val Loss: 0.7085 | LR: 0.000025
+Epoch 41/400 | Train Loss: 1.9270 | Val Loss: 0.7093 | LR: 0.000025
+Epoch 42/400 | Train Loss: 1.9256 | Val Loss: 0.7574 | LR: 0.000025
+Epoch 43/400 | Train Loss: 1.9239 | Val Loss: 0.7228 | LR: 0.000025
+Epoch 44/400 | Train Loss: 1.9237 | Val Loss: 0.7383 | LR: 0.000025
+Epoch 45/400 | Train Loss: 1.9224 | Val Loss: 0.7654 | LR: 0.000025
+Epoch 46/400 | Train Loss: 1.9201 | Val Loss: 0.7640 | LR: 0.000025
+Epoch 47/400 | Train Loss: 1.9199 | Val Loss: 0.7369 | LR: 0.000013
+Epoch 48/400 | Train Loss: 1.9153 | Val Loss: 0.7347 | LR: 0.000013
+Epoch 49/400 | Train Loss: 1.9150 | Val Loss: 0.7453 | LR: 0.000013
+Epoch 50/400 | Train Loss: 1.9140 | Val Loss: 0.7734 | LR: 0.000013
+
+[Early Stopping] Parando na Época 51 após 20 épocas sem melhora.
+
+Training finished.
+
+==================================================
+CLASSIFICATION RESULTS (ALL classes)
+==================================================
+Overall Accuracy: 0.8230
+
+Detailed Classification Report:
+                precision    recall  f1-score   support
+
+          Cell       0.64      0.63      0.64       188
+    Cell-Multi       0.46      0.46      0.46       129
+      Cracking       0.72      0.69      0.71        94
+         Diode       0.93      0.96      0.94       150
+   Diode-Multi       1.00      0.59      0.74        17
+      Hot-Spot       0.65      0.52      0.58        25
+Hot-Spot-Multi       0.55      0.46      0.50        24
+    No-Anomaly       0.92      0.97      0.94      1000
+Offline-Module       0.86      0.65      0.74        83
+     Shadowing       0.79      0.73      0.76       106
+       Soiling       0.43      0.30      0.35        20
+    Vegetation       0.73      0.70      0.71       164
+
+      accuracy                           0.82      2000
+     macro avg       0.72      0.64      0.67      2000
+  weighted avg       0.82      0.82      0.82      2000
+
+Matriz de Confusão Sem Normalização
+
+Matriz salva em: ./augmented_data_output\confusion_matrix_raw_ALL.png
+Matriz de Confusão Normalizada
+
+Matriz salva em: ./augmented_data_output\confusion_matrix_normalized_ALL.png
+
+Final DNN model salvo como: ultradeep_dnn_ALL_aug.pth

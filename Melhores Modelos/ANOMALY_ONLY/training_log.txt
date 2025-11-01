@@ -1,0 +1,145 @@
+--- LOG INICIADO: ./training_output\training_log.txt ---
+Carregando DataFrames de Treino (Raw Augmented), Validação e Teste...
+
+--- Modo: ANOMALY_ONLY selecionado. Removendo 'No-Anomaly' ---
+Total Original (Raw): 8010, Total Aumentado (Raw): 211990
+  -> Offline-Module: Added 11338 Augmented (Total: 12000)
+  -> Shadowing: Added 11155 Augmented (Total: 12000)
+  -> Diode: Added 8799 Augmented (Total: 10000)
+  -> Cracking: Added 11247 Augmented (Total: 12000)
+  -> Cell: Added 13497 Augmented (Total: 15000)
+  -> Cell-Multi: Added 18969 Augmented (Total: 20000)
+  -> Vegetation: Added 10687 Augmented (Total: 12000)
+  -> Soiling: Added 19836 Augmented (Total: 20000)
+  -> Diode-Multi: Added 11859 Augmented (Total: 12000)
+  -> Hot-Spot: Added 14801 Augmented (Total: 15000)
+  -> Hot-Spot-Multi: Added 15802 Augmented (Total: 16000)
+
+Total de Amostras de Treino FINAL (Após Equalização): 156000
+Distribuição Final de Classes de Treino:
+anomaly_class
+Cell-Multi        20000
+Soiling           20000
+Hot-Spot-Multi    16000
+Hot-Spot          15000
+Cell              15000
+Offline-Module    12000
+Shadowing         12000
+Vegetation        12000
+Cracking          12000
+Diode-Multi       12000
+Diode             10000
+Name: count, dtype: int64
+Total classes: 11. Train samples (Final): 156000, Val samples: 990, Test samples: 1000
+Pesos de Classe Aplicados (na ordem do LabelEncoder): [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
+
+Iniciando extração e escrita batch-wise para train (Total: 156000)...
+  -> Modelo ResNet | Feature Size: 2048
+  -> Modelo ViT | Feature Size: 768
+  -> Modelo MobileNetV2 | Feature Size: 1280
+  -> Modelo AlexNet | Feature Size: 9216
+
+Concatenando features (Input Size: 13312)...
+Ensemble features salvas com sucesso em: ./training_output\feature_cache\features_train_ANOMALY_ONLY_ENSEMBLE.npy
+
+Iniciando extração e escrita batch-wise para val (Total: 990)...
+  -> Modelo ResNet | Feature Size: 2048
+  -> Modelo ViT | Feature Size: 768
+  -> Modelo MobileNetV2 | Feature Size: 1280
+  -> Modelo AlexNet | Feature Size: 9216
+
+Concatenando features (Input Size: 13312)...
+Ensemble features salvas com sucesso em: ./training_output\feature_cache\features_val_ANOMALY_ONLY_ENSEMBLE.npy
+
+Iniciando extração e escrita batch-wise para test (Total: 1000)...
+  -> Modelo ResNet | Feature Size: 2048
+  -> Modelo ViT | Feature Size: 768
+  -> Modelo MobileNetV2 | Feature Size: 1280
+  -> Modelo AlexNet | Feature Size: 9216
+
+Concatenando features (Input Size: 13312)...
+Ensemble features salvas com sucesso em: ./training_output\feature_cache\features_test_ANOMALY_ONLY_ENSEMBLE.npy
+INPUT_SIZE (Features Ensemble): 13312
+
+==================================================
+INICIANDO TREINAMENTO DO CLASSIFICADOR (ANOMALY_ONLY classes)
+==================================================
+Epoch 1/400 | Train Loss: 2.2996 | Val Loss: 1.5036 | LR: 0.000100
+Epoch 2/400 | Train Loss: 2.2368 | Val Loss: 1.2811 | LR: 0.000100
+Epoch 3/400 | Train Loss: 2.2069 | Val Loss: 1.2738 | LR: 0.000100
+Epoch 4/400 | Train Loss: 2.1876 | Val Loss: 1.1613 | LR: 0.000100
+Epoch 5/400 | Train Loss: 2.1745 | Val Loss: 1.1125 | LR: 0.000100
+Epoch 6/400 | Train Loss: 2.1620 | Val Loss: 1.0802 | LR: 0.000100
+Epoch 7/400 | Train Loss: 2.1542 | Val Loss: 1.0070 | LR: 0.000100
+Epoch 8/400 | Train Loss: 2.1465 | Val Loss: 0.9720 | LR: 0.000100
+Epoch 9/400 | Train Loss: 2.1386 | Val Loss: 1.0299 | LR: 0.000100
+Epoch 10/400 | Train Loss: 2.1327 | Val Loss: 0.9572 | LR: 0.000100
+Epoch 11/400 | Train Loss: 2.1255 | Val Loss: 0.9675 | LR: 0.000100
+Epoch 12/400 | Train Loss: 2.1209 | Val Loss: 0.9360 | LR: 0.000100
+Epoch 13/400 | Train Loss: 2.1167 | Val Loss: 0.9726 | LR: 0.000100
+Epoch 14/400 | Train Loss: 2.1115 | Val Loss: 1.0172 | LR: 0.000100
+Epoch 15/400 | Train Loss: 2.1085 | Val Loss: 0.9362 | LR: 0.000100
+Epoch 16/400 | Train Loss: 2.1035 | Val Loss: 0.9393 | LR: 0.000100
+Epoch 17/400 | Train Loss: 2.1008 | Val Loss: 1.0023 | LR: 0.000100
+Epoch 18/400 | Train Loss: 2.0969 | Val Loss: 1.0159 | LR: 0.000100
+Epoch 19/400 | Train Loss: 2.0921 | Val Loss: 0.9338 | LR: 0.000100
+Epoch 20/400 | Train Loss: 2.0902 | Val Loss: 0.9381 | LR: 0.000100
+Epoch 21/400 | Train Loss: 2.0874 | Val Loss: 0.9218 | LR: 0.000100
+Epoch 22/400 | Train Loss: 2.0834 | Val Loss: 0.9409 | LR: 0.000100
+Epoch 23/400 | Train Loss: 2.0829 | Val Loss: 0.8918 | LR: 0.000100
+Epoch 24/400 | Train Loss: 2.0791 | Val Loss: 0.9564 | LR: 0.000100
+Epoch 25/400 | Train Loss: 2.0766 | Val Loss: 0.9662 | LR: 0.000100
+Epoch 26/400 | Train Loss: 2.0758 | Val Loss: 0.9000 | LR: 0.000100
+Epoch 27/400 | Train Loss: 2.0730 | Val Loss: 0.9622 | LR: 0.000100
+Epoch 28/400 | Train Loss: 2.0703 | Val Loss: 0.9557 | LR: 0.000100
+Epoch 29/400 | Train Loss: 2.0669 | Val Loss: 0.9414 | LR: 0.000100
+Epoch 30/400 | Train Loss: 2.0672 | Val Loss: 0.9589 | LR: 0.000100
+Epoch 31/400 | Train Loss: 2.0655 | Val Loss: 0.9133 | LR: 0.000050
+Epoch 32/400 | Train Loss: 2.0534 | Val Loss: 0.9822 | LR: 0.000050
+Epoch 33/400 | Train Loss: 2.0485 | Val Loss: 0.9971 | LR: 0.000050
+Epoch 34/400 | Train Loss: 2.0459 | Val Loss: 1.0111 | LR: 0.000050
+Epoch 35/400 | Train Loss: 2.0444 | Val Loss: 0.9674 | LR: 0.000050
+Epoch 36/400 | Train Loss: 2.0426 | Val Loss: 1.0007 | LR: 0.000050
+Epoch 37/400 | Train Loss: 2.0401 | Val Loss: 0.9899 | LR: 0.000050
+Epoch 38/400 | Train Loss: 2.0377 | Val Loss: 1.0000 | LR: 0.000050
+Epoch 39/400 | Train Loss: 2.0370 | Val Loss: 0.9934 | LR: 0.000025
+Epoch 40/400 | Train Loss: 2.0319 | Val Loss: 0.9917 | LR: 0.000025
+Epoch 41/400 | Train Loss: 2.0283 | Val Loss: 1.0518 | LR: 0.000025
+Epoch 42/400 | Train Loss: 2.0276 | Val Loss: 1.1137 | LR: 0.000025
+
+[Early Stopping] Parando na Época 43 após 20 épocas sem melhora.
+
+Training finished.
+
+==================================================
+CLASSIFICATION RESULTS (ANOMALY_ONLY classes)
+==================================================
+Overall Accuracy: 0.7120
+
+Detailed Classification Report:
+                precision    recall  f1-score   support
+
+          Cell       0.63      0.64      0.64       188
+    Cell-Multi       0.53      0.36      0.43       129
+      Cracking       0.65      0.70      0.67        94
+         Diode       0.91      0.96      0.94       150
+   Diode-Multi       1.00      0.59      0.74        17
+      Hot-Spot       0.60      0.60      0.60        25
+Hot-Spot-Multi       0.55      0.50      0.52        24
+Offline-Module       0.77      0.84      0.80        83
+     Shadowing       0.80      0.89      0.84       106
+       Soiling       0.50      0.30      0.38        20
+    Vegetation       0.69      0.79      0.74       164
+
+      accuracy                           0.71      1000
+     macro avg       0.69      0.65      0.66      1000
+  weighted avg       0.70      0.71      0.70      1000
+
+Matriz de Confusão Sem Normalização
+
+Matriz salva em: ./augmented_data_output\confusion_matrix_raw_ANOMALY_ONLY.png
+Matriz de Confusão Normalizada
+
+Matriz salva em: ./augmented_data_output\confusion_matrix_normalized_ANOMALY_ONLY.png
+
+Final DNN model salvo como: ultradeep_dnn_ANOMALY_ONLY_aug.pth
