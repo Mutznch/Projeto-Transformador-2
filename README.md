@@ -1,9 +1,9 @@
 # Projeto-Transformador-2
-Projeto transformador 2 - Detecção de anomalia em painéis solares
+Projeto transformador 2 - Detecção de anomalia em painéis solares.
 
 Este repositório contém os principais arquivos de código e resultados referentes ao projeto da disciplina.
 
-Database: https://github.com/RaptorMaps/InfraredSolarModules/tree/master.
+Database: https://github.com/RaptorMaps/InfraredSolarModules/tree/master
 
 Imagens geradas: https://drive.google.com/file/d/1IqB25GE_N7521AtTvcUIOrGL4Ex4qgwp/view?usp=sharing
 
@@ -37,7 +37,7 @@ Arquivos deste repositório:
     EARLY_STOPPING_PATIENCE = 20 
     LR_SCHEDULER_PATIENCE = 7
     
-    CLASS_SUBSET_MODE → De que forma lerá os arquivos de entrada para treinoalos. Opções: 'ALL', 'ANOMALY_ONLY', 'BINARY'.
+    CLASS_SUBSET_MODE → De que forma lerá os arquivos de entrada para treiná-los. Opções: 'ALL', 'ANOMALY_ONLY', 'BINARY'.
     
     - Número de imagens que serão usadas para cada classe
     TARGET_SAMPLES_PER_CLASS_MAP = {
